@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Love - Paparazzi</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lyrics {
+    position: absolute;
+    left: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42%;
+    z-index: 3;
+}
+
+.small {
+    font-size: 10px;
+    color: #578fc5;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+#lyric {
+    font-size: clamp(16px, 3vw, 23px);
+    font-weight: bold;
+    line-height: 1.6;
+    color: #e6f5ff;
+    text-shadow: 0 0 15px #168cff;
+    transition: opacity .7s, transform .7s;
+}
+
+.heart-area {
+    position: absolute;
+    right: 5%;
+    width: 48%;
+    max-width: 370px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: heartbeat 2.5s ease-in-out infinite,
+               rotateHeart 12s linear infinite;
+}
+
+.heart:nth-child(2) {
+    width: 90%;
+    animation-delay: .1s;
+}
+
+.heart:nth-child(3) {
+    width: 82%;
+    animation-delay: .2s;
+}
+
+.heart:nth-child(4) {
+    width: 72%;
+    animation-delay: .3s;
+}
+
+.heart:nth-child(5) {
+    width: 64%;
+    animation-delay: .4s;
+}
+
+.heart:nth-child(6) {
+    width: 54%;
+    animation-delay: .5s;
+}
+
+.heart:nth-child(7) {
+    width: 45%;
+    animation-delay: .6s;
+}
+
+.heart:nth-child(8) {
+    width: 35%;
+    animation-delay: .7s;
+}
+
+.heart path {
+    fill: none;
+    stroke: #55b5ff;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-dasharray: 3 2;
+}
+
+.heart:nth-child(even) path {
+    stroke: #168cff;
+}
+
+.heart:nth-child(3n) path {
+    stroke: #a1ddff;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes rotateHeart {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+.credit {
+    position: absolute;
+    bottom: 35px;
+    left: 7%;
+    color: #42658b;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.play-button {
+    position: absolute;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #168cff;
+    background: #06172a;
+    color: #b9ddff;
+    border-radius: 30px;
+    padding: 13px 25px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 0 20px #126ac855;
+}
+
+.play-button:active {
+    transform: translateX(-50%) scale(.95);
+}
+
+@media(max-width:600px) {
+    .lyrics {
+        left: 5%;
+        width: 43%;
+    }
+
+    .heart-area {
+        right: 1%;
+        width: 54%;
+    }
+
+    #lyric {
+        font-size: 15px;
+    }
+
+    .small {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<div class="scene">
+
+    <div class="lyrics">
+        <div class="small">LADY GAGA · PAPARAZZI</div>
+        <div id="lyric">Cause you know that baby I</div>
+    </div>
+
+    <div class="heart-area">
+
+        <svg class="heart" viewBox="0 0 200 200">
+            <path d="M100 175 C80 145 10 105 10 60 C10 5 80 5 100 55 C120 5 190 5 190 60 C190 105 120 145 100 175Z"/>
+        </svg>
+
+        <svg class="heart" viewBox="0 0 200 200">
+            <path d="M100 175 C80 145 10 105 10 60 C10 5 80 5 100 55 C120 5 190 5 190 60 C190 105 120 145 100 175Z"/>
+        </svg>
+
+        <svg class="heart" viewBox="0 0 200 200">
+            <path d="M100 175 C80 145 10 105 10 60 C10 5 80 5 100 55 C120 5 190 5 190 60 C190 105 120 145 100 175Z"/>
+        </svg>
+
+        <svg class="heart" viewBox="0 0 200 200">
+            <path d="M100 175 C80 145 10 105 10 60 C10 5 80 5 100 55 C120 5 190 5 190 60 C190 105 120 145 100 175Z"/>
+        </svg>
+
+        <svg class="heart" viewBox="0 0 200 200">
+            <path d="M100 175 C80 145 10 105 10 60 C10 5 80 5 100 55 C120 5 190 5 190 60 C190 105 120 145 100 175Z"/>
+        </svg>
+
+        <svg class="heart" viewBox="0 0 200 200">
+            <path d="M100 175 C80 145 10 105 10 60 C10 5 80 5 100 55 C120 5 190 5 190 60 C190 105 120 145 100 175Z"/>
+        </svg>
+
+        <svg class="heart" viewBox="0 0 200 200">
+            <path d="M100 175 C80 145 10 105 10 60 C10 5 80 5 100 55 C120 5 190 5 190 60 C190 105 120 145 100 175Z"/>
+        </svg>
+
+        <svg class="heart" viewBox="0 0 200 200">
+            <path d="M100 175 C80 145 10 105 10 60 C10 5 80 5 100 55 C120 5 190 5 190 60 C190 105 120 145 100 175Z"/>
+        </svg>
+
+    </div>
+
+    <div class="credit">
+        MADE WITH LOVE · BLUE UNIVERSE
+    </div>
+
+    <button class="play-button" onclick="startShow()">
+        ♡ START EXPERIENCE
+    </button>
+
+</div>
+
+<audio id="music" src="paparazzi.mp3" preload="auto"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
